@@ -20,8 +20,8 @@ This code has following features compared with the official Caffe.
 5) quant_trunc_abs_layer to perform element-wise quantization, trunction and absolute operations.
 
 # Examples
-Two examples are provided in examples/jpeg_steganalysis for QF75 and QF95 respectively. Minumum required GPU memory is 12GB. Recommend Titan X and Titan XP.
+There is a example provided in examples/jpeg_steganalysis for QF75. Minumum required GPU memory is 15GB. Recommend P100.
 
 1) Change the Caffe dir in cmd.sh and cmd_test.sh. The cmd_test.sh is used to output probabilities only.
-2) Set the source, cover_dir, and stego_dir in the input layer (in CNN.prototxt).
+2) Set the source, cover_dir, and stego_dir in the input layer (in RXGNet.prototxt).
 3) The source is a txt file, each line contain a number (from 1 ~ 10000 for BOSSBase). See the txt files in /rand_num_generators. cover_dir and stego_dir simply contain images in '.jpg' format.
