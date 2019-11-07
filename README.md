@@ -1,11 +1,9 @@
 # Introduction
 
-Source code to reproduce the results in
+Source code to reproduce the results in “JPEG Steganalysis Based on ResNeXt with Gauss Partial Derivative Filters” 
 
-G. Xu, “Deep Convolutional Neural Network to Detect J-UNIWARD,” in Proc. 5th ACM Workshop Inf. Hiding Multimedia Secur. (IH&MMSec), 2017, accepted.
 
-https://arxiv.org/abs/1704.08378
-
+This code makes the necessary modifications on the [code](https://github.com/GuanshuoXu/caffe_deep_learning_for_steganalysis) provided by Dr. Xu
 # Building Instructions
 
 The DCT kernels are saved in /kernels. The directory to access them are hard-coded in /include/caffe/filler.hpp
