@@ -1,16 +1,5 @@
-name: "RXGNet"
+name: "RXGNet_test"
 ####################### input #############################
-layer {
-  top:"data" top:"label"
-  name:"CNN_input" type:"ImageDataSteganalysisJpegDct"
-  include {phase:TRAIN}
-  image_data_steganalysis_jpeg_dct_param {
-    source:"/home/user/suante/Caffe_RXGNet/rand_num_generators/train_halfhalf.txt"
-    cover_dir:"/home/user/suante/data/512X512_75_JUN_0.3/cover/"
-    stego_dir:"/home/user/suante/data/512X512_75_JUN_0.3/stego/"
-    batch_size:32 shuffle:true rand_mirror_rotate:true
-  }
-}
 layer {
   top:"data" top:"label"
   name:"CNN_input" type:"ImageDataSteganalysisJpegDct"
@@ -19,7 +8,7 @@ layer {
     source:"/home/user/suante/Caffe_RXGNet/rand_num_generators/test_halfhalf.txt"
     cover_dir:"/home/user/suante/data/512X512_75_JUN_0.3/cover/"
     stego_dir:"/home/user/suante/data/512X512_75_JUN_0.3/stego/"
-    batch_size:10 shuffle:false rand_mirror_rotate:false
+    batch_size:50 shuffle:false rand_mirror_rotate:false
   }
 }
 layer {
@@ -1199,11 +1188,6 @@ layer{
 }
 ####################################Result######################################################
 layer {
-  bottom:"result" bottom:"label" top:"accuracy"
-  name:"accuracy" type:"Accuracy"
-  include {phase:TEST}
-}
-layer {
-  bottom:"result" bottom:"label" top:"loss"
-  name:"loss" type:"SoftmaxWithLoss"
+  bottom:"result" top:"prob"
+  name:"prob" type:"Softmax"
 }
